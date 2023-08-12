@@ -17,14 +17,6 @@ mongoose.connect(process.env.DATABASE_URI)
 
 app.use(express.json());
 
-// app.get("/", (req, res) => {
-//     return res.send(`
-//     Users API: <a href="/api/users">/api/users</a><br/>
-//     Search with a specific field: 
-//     <script>document.body.style.background="black"</script>
-//     `)
-// });
-
 app.use("/api/users", userRouter);
 
 app.listen(port, () => {
