@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import cors from "cors";
 import userRouter from "./router/userRouter.js";
 
 dotenv.config();
@@ -8,6 +9,8 @@ dotenv.config();
 
 const app = express();
 const port = 8000;
+
+app.use(cors())
 
 mongoose.connect(process.env.DATABASE_URI)
     .then(() => {
